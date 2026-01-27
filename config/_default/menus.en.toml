@@ -29,13 +29,20 @@ weight = 4
 pre = "github"
 url = "https://github.com/Eonloop"
 identifier = "YFhUlafrjK"
-weight = 9999
+weight = 9_999
 
 [[main]]
 pre = "linkedin"
 url = "https://linkedin.com/in/ianj1993"
 identifier = "nir8zxeQez"
-weight = 9999
+weight = 9_999
+
+[[main]]
+name = "Projects"
+pre = "lightbulb"
+pageRef = "projects"
+identifier = "ueaOWiTmOP"
+weight = 9_999
 
 [[footer]]
 none = "none"
