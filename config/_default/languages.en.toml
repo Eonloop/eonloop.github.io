@@ -2,7 +2,7 @@ disabled = false
 languageCode = "en"
 languageName = "English"
 weight = 1
-title = "Eonloop"
+title = "ijjtech"
 
 [params]
 displayName = "EN"
@@ -13,6 +13,6 @@ logo = ""
   [params.author]
     image="IMG_0542.JPG"
     name = "Ian Jones"
-    links = [ { bluesky = "https://bsky.app/profile/eonloop.bsky.social" }, { github = "https://github.com/eonloop" }, { linkedin = "https://www.linkedin.com/in/ianj1993/" } ]
-    headline = "Tech, Books, Nature"
+    links = [ { github = "https://github.com/eonloop" }, { linkedin = "https://www.linkedin.com/in/ianj1993/" } ]
+    headline = "Building Better Systems Through Documentation and Code"
 

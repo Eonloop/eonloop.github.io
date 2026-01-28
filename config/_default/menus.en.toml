@@ -20,6 +20,12 @@ identifier = "wBE0FQbo3x"
 weight = 3
 
 [[main]]
+name = "Projects"
+pageRef = "projects"
+identifier = "ueaOWiTmOP"
+weight = 9_999
+
+[[main]]
 name = "Contact Me"
 pageRef = "contact"
 identifier = "1ttkm21ydu"
