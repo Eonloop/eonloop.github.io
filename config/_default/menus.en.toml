@@ -23,13 +23,13 @@ weight = 3
 name = "Projects"
 pageRef = "projects"
 identifier = "ueaOWiTmOP"
-weight = 9_999
+weight = 4
 
 [[main]]
 name = "Contact Me"
 pageRef = "contact"
 identifier = "1ttkm21ydu"
-weight = 4
+weight = 5
 
 [[main]]
 pre = "github"
@@ -43,12 +43,6 @@ url = "https://linkedin.com/in/ianj1993"
 identifier = "nir8zxeQez"
 weight = 9_999
 
-[[main]]
-name = "Projects"
-pre = "lightbulb"
-pageRef = "projects"
-identifier = "ueaOWiTmOP"
-weight = 9_999
 
 [[footer]]
 none = "none"
