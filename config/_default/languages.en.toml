@@ -11,7 +11,7 @@ rtl = false
 dateFormat = "2 January 2006"
 logo = ""
   [params.author]
-    image="IMG_0542.JPG"
+    image="headshot.JPG"
     name = "Ian Jones"
     links = [ { github = "https://github.com/eonloop" }, { linkedin = "https://www.linkedin.com/in/ianj1993/" } ]
     headline = "Building Better Systems Through Documentation and Code"
