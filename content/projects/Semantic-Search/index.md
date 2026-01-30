@@ -13,9 +13,18 @@ This project spawned from my professional experience in documentation, many time
 
 With my interest in Linear Algebra and Natural Language Processing as well as DevOps I figured that a solid project to work on would be to implement a full DevOps pipeline for a dockerized Semantic Search application.
 
-## Tooling Utilized
-- FastAPI
-- Python
+## Tooling Utilized (Subject To Change As The Project Progresses)
+- FastAPI - REST API
+- Python - Primary Programming Language
+- Docker - Containerization
+- ChromaDB - Vector database
+- VS Code - IDE Utilized
+- HTML/CSS/JavaScript - Web Frontend
+- GitHub - Version Control
+- GitHub Actions - CI/CD
+- GitHub Projects - Project Management
+- pytest - Unit Testing Framework 
+- Mermaid - Diagramming
 
 
 ## Weekly Progress
