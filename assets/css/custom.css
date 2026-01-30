@@ -127,3 +127,31 @@
 td {
     vertical-align: middle !important;
 }
+
+
+/* --- Contact Form Styling --- */
+
+#contact-form {
+    @apply mt-8 flex flex-col gap-y-6 max-w-2xl;
+}
+
+#contact-form label {
+    @apply block text-sm font-semibold text-neutral-800 dark:text-neutral-200;
+}
+
+#contact-form input, 
+#contact-form textarea {
+    @apply mt-2 block w-full rounded-lg border border-neutral-300 bg-neutral-50 px-4 py-2 
+           text-neutral-900 focus:border-primary-500 focus:ring-primary-500 
+           dark:border-neutral-700 dark:bg-neutral-800 dark:text-white dark:placeholder-neutral-400;
+}
+
+#contact-form button {
+    @apply w-fit cursor-pointer rounded-lg bg-primary-500 px-6 py-3 font-bold text-white 
+           transition-all hover:bg-primary-600 hover:shadow-lg focus:outline-none focus:ring-2 
+           focus:ring-primary-500 focus:ring-offset-2;
+}
+
+#form-status {
+    @apply mt-4 text-sm font-medium;
+}
