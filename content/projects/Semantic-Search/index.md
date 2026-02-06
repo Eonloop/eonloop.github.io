@@ -100,4 +100,4 @@ Now that I'm back in the swing of things and have a little less travel time, thi
 
 Selecting a Vector Database and understanding the tooling that I'll be using and how I need to connect it has been a huge relief. I think trying to build the perfect architecture leads me into decision fatigue. That can be debilitating, I'm getting better about how I make my technical decisions. Which is helpful to actual moving forward on a project. It's all about iterations, getting the basic understanding and working prototype and building from there. I think I'm becoming a lot more realistic (while also maintaining a healthy level of curiosity) with how I handle projects. 
 
-Focusin
+
