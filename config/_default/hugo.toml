@@ -21,6 +21,10 @@ enableEmoji = true
 [pagination]
   pagerSize = 100
 
+
+[plugins]
+  mermaid = true
+
 [imaging]
   anchor = 'Center'
 
