@@ -113,30 +113,30 @@ I came to this diagram
 
 {{< mermaid >}}
 graph TD
-    subgraph Client_Side [User Interface Container]
-        UI[HTML/JS Frontend]
-    end
+subgraph Client_Side [User Interface Container]
+UI[HTML/JS Frontend]
+end
 
-    subgraph Backend_API [FastAPI Container]
-        API[FastAPI Router]
-        Ingestor[Ingestion Logic: PyMuPDF/Docx]
-        Splitter[LangChain Splitter]
-        Embedder[Sentence-Transformers Model]
-    end
+subgraph Backend_API [FastAPI Container]
+API[FastAPI Router]
+Ingestor[Ingestion Logic: PyMuPDF/Docx]
+Splitter[LangChain Splitter]
+Embedder[Sentence-Transformers Model]
+end
 
-    subgraph Storage_Layer [Vector Database Container]
-        DB[(ChromaDB)]
-    end
+subgraph Storage_Layer [Vector Database Container]
+DB[(ChromaDB)]
+end
 
-    UI -- 1. Upload File POST ingest --> API
-    API --> Ingestor --> Splitter --> Embedder
-    Embedder -- 2. Store Vectors and Metadata --> DB
+UI -- 1. Upload File POST ingest --> API
+API --> Ingestor --> Splitter --> Embedder
+Embedder -- 2. Store Vectors and Metadata --> DB
 
-    UI -- 3. Search Query GET search --> API
-    API -- 4. Embed Query --> Embedder
-    Embedder -- 5. Semantic Comparison --> DB
-    DB -- 6. Return Top-K Results --> API
-    API -- 7. JSON Response --> UI
+UI -- 3. Search Query GET search --> API
+API -- 4. Embed Query --> Embedder
+Embedder -- 5. Semantic Comparison --> DB
+DB -- 6. Return Top-K Results --> API
+API -- 7. JSON Response --> UI
 {{< /mermaid >}}
 
 I utilized [Mermaid.js](https://mermaid.js.org/syntax/flowchart.html) which was extremely useful in constructing a graph inside of my Github documentation, I really enjoyed all the possible visualizations that you can create with this tool and I'll probably be utilizing it going forward.
