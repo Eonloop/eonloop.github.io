@@ -6,6 +6,7 @@ draft: false
 description: "Project documentation for my MLOps Project"
 tags: ["semantic", "search", "docker", "nlp", "linear algebra"]
 showAuthor: true
+mermaid: true
 ---
 
 ## Purpose Of This Project
