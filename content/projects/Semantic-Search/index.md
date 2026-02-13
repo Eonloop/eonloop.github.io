@@ -101,3 +101,53 @@ Now that I'm back in the swing of things and have a little less travel time, thi
 Selecting a Vector Database and understanding the tooling that I'll be using and how I need to connect it has been a huge relief. I think trying to build the perfect architecture leads me into decision fatigue. That can be debilitating, I'm getting better about how I make my technical decisions. Which is helpful to actual moving forward on a project. It's all about iterations, getting the basic understanding and working prototype and building from there. I think I'm becoming a lot more realistic (while also maintaining a healthy level of curiosity) with how I handle projects. 
 
 
+--- 
+### 2/12/2026
+
+#### Last Weeks Work
+
+This week I focused first on understanding the flow of data through this application. I think that my previous efforts were a little fragmented so I mapped out the flow of what will be happening through some research of a how traditional semantic search application would be handled.
+
+I came to this diagram
+
+```mermaid
+graph TD
+    subgraph Client_Side [User Interface Container]
+        UI[HTML/JS Frontend]
+    end
+
+    subgraph Backend_API [FastAPI Container]
+        API[FastAPI Router]
+        Ingestor[Ingestion Logic: PyMuPDF/Docx]
+        Splitter[LangChain Splitter]
+        Embedder[Sentence-Transformers Model]
+    end
+
+    subgraph Storage_Layer [Vector Database Container]
+        DB[(ChromaDB)]
+    end
+
+    UI -- "1. Upload File (POST /ingest)" --> API
+    API --> Ingestor --> Splitter --> Embedder
+    Embedder -- "2. Store Vectors + Metadata" --> DB
+
+    UI -- "3. Search Query (GET /search)" --> API
+    API -- "4. Embed Query" --> Embedder
+    Embedder -- "5. Semantic Comparison" --> DB
+    DB -- "6. Return Top-K Results" --> API
+    API -- "7. JSON Response" --> UI
+```
+I utilized [Mermaid.js](https://mermaid.js.org/syntax/flowchart.html) which was extremely useful in constructing a graph inside of my Github documentation, I really enjoyed all the possible visualizations that you can create with this tool and I'll probably be utilizing it going forward.
+
+Next what I tried to get working was my initial ingestion script. I found out that LangChain has a lot of interesting modules that help standardize the document ingestion process. So after reading the [PyMuPDF Documentation](https://pymupdf.readthedocs.io/en/latest/rag.html) that mentions their integration with LangChain I started to do a little bit more research. The Python libraries for docx and pymupdf are of course faster and native but I'm trying to create a portable application which it seems like LangChain is perfect for (I may learn a lesson here to the contrary but if that happens I will refactor my code after running some tests).
+
+So then after realizing I wanted to utilize LangChain for ingestion, I then started reading about chunking and a solid strategy for that. I found this [phenomenal article](https://www.pinecone.io/learn/chunking-strategies/#:~:text=Recursive%20Character%20Level,sizes%20when%20possible.) on Pinecone's website describing different chunking strategies and why it's important for context windows. This helped me realize that the strategy that I probably wanted to go with is 
+
+#### Next Weeks Work
+
+#### Impediments
+
+#### Reflections
+
+
+
