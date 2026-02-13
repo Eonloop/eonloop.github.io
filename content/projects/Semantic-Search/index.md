@@ -110,7 +110,7 @@ This week I focused first on understanding the flow of data through this applica
 
 I came to this diagram
 
-{{< mermaid >}}
+{{< chart >}}
 graph TD
     subgraph Client_Side [User Interface Container]
         UI[HTML/JS Frontend]
@@ -136,7 +136,7 @@ graph TD
     Embedder -- "5. Semantic Comparison" --> DB
     DB -- "6. Return Top-K Results" --> API
     API -- "7. JSON Response" --> UI
-{{< /mermaid >}}
+{{< /chart >}}
 
 I utilized [Mermaid.js](https://mermaid.js.org/syntax/flowchart.html) which was extremely useful in constructing a graph inside of my Github documentation, I really enjoyed all the possible visualizations that you can create with this tool and I'll probably be utilizing it going forward.
 
