@@ -149,7 +149,7 @@ td {
 #contact-form textarea {
     margin-top: 0.5rem;
     display: block;
-    width: 100%;
+    width: 200%;
     border-radius: 0.5rem;
     border: 1px solid #d4d4d4; 
     background-color: #fafafa; 
@@ -179,4 +179,17 @@ td {
 #contact-form button:hover {
     filter: brightness(1.1);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Mermaid diagram sizing */
+.mermaid {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.mermaid svg {
+    min-width: 800px;
+    max-width: 100%;
+    height: auto;
 }
