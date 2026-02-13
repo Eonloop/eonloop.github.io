@@ -100,3 +100,6 @@ showTableOfContents = true
 groupByYear = false
 cardView = false
 cardViewScreenWidth = false
+
+[plugins]
+mermaid = true
