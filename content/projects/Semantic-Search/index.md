@@ -110,7 +110,7 @@ This week I focused first on understanding the flow of data through this applica
 
 I came to this diagram
 
-```mermaid
+{{< mermaid >}}
 graph TD
     subgraph Client_Side [User Interface Container]
         UI[HTML/JS Frontend]
@@ -136,18 +136,42 @@ graph TD
     Embedder -- "5. Semantic Comparison" --> DB
     DB -- "6. Return Top-K Results" --> API
     API -- "7. JSON Response" --> UI
-```
+{{< /mermaid >}}
+
 I utilized [Mermaid.js](https://mermaid.js.org/syntax/flowchart.html) which was extremely useful in constructing a graph inside of my Github documentation, I really enjoyed all the possible visualizations that you can create with this tool and I'll probably be utilizing it going forward.
 
 Next what I tried to get working was my initial ingestion script. I found out that LangChain has a lot of interesting modules that help standardize the document ingestion process. So after reading the [PyMuPDF Documentation](https://pymupdf.readthedocs.io/en/latest/rag.html) that mentions their integration with LangChain I started to do a little bit more research. The Python libraries for docx and pymupdf are of course faster and native but I'm trying to create a portable application which it seems like LangChain is perfect for (I may learn a lesson here to the contrary but if that happens I will refactor my code after running some tests).
 
-So then after realizing I wanted to utilize LangChain for ingestion, I then started reading about chunking and a solid strategy for that. I found this [phenomenal article](https://www.pinecone.io/learn/chunking-strategies/#:~:text=Recursive%20Character%20Level,sizes%20when%20possible.) on Pinecone's website describing different chunking strategies and why it's important for context windows. This helped me realize that the strategy that I probably wanted to go with is 
+So then after realizing I wanted to utilize LangChain for ingestion, I then started reading about chunking and a solid strategy for that. I found this [phenomenal article](https://www.pinecone.io/learn/chunking-strategies/#:~:text=Recursive%20Character%20Level,sizes%20when%20possible.) on Pinecone's website describing different chunking strategies and why it's important for context windows. This helped me realize that the strategy that I probably wanted to go with is RecursiveCharacterTextSplitter, this method prioritizes first paragraphs, then sentences, then characters, it actually reminds me very much of the backoff algorithm for handling n-grams.
+
+Additionally I found a solid sentence-transformer model that I wanted to utilize
+[all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2) the documentation is clear and straight-forward and it seems to be a model that could run on MOST machines without issue. So I prioritized this model.
+
+Overall this was a bit more involved than I was expecting getting this ingestion script stood up, but I learned a TON about the process.
 
 #### Next Weeks Work
 
+Next week I really plan to fine tune this ingest.py script that I've stood up because nothing else matters if this doesn't work well. I think I realized that with this weeks work that I should first focus on the basic functionality of the application before jumping into how I'd like to connect it to a front-end and package it for portability. 
+
+So I think I want to spend some more time working on the Ingest -> Chunk -> Embed -> Index workflow. 
+
+Something that I really want to get locked down is the categorization of the ingested documentation in the vector database with the appropriate metadata.
+
+So overall I think I'm going to shift towards focusing a bit more on the core app logic and understanding the flow of the data and it's performance before I start running tests and setting up the FastAPI routes fully. 
+
 #### Impediments
 
+I think the only impediments that I've been running into are not tracking the work I'm doing as closely as I'd like. It's very easy to get off track without a focused plan in place and I've neglected the Project Management side of the work a bit. So now that I have the diagram I'm probably going to setup some more issues to tackle in Github Projects so that I have a more defined path. I realized that at some point I got lost in the documentation between LangChain, Pinecone, and HuggingFace and I realized I was getting a bit overwhelmed.
+
+So in short I'm going to scope out my tasks for the week more clearly in my Github Repo through Github Projects.
+
 #### Reflections
+
+This week was incredible in just how much I learned about all of the tooling and methods there are for Semantic Search, it was very cool to get to think about what I'm trying to build at a basic level and how to make that work locally on my computer before getting it ready to be pushed out to others. 
+
+I think that this well is extremely deep and I even took a look at training my own classifier for text in the documentation on [Pytorch](https://docs.pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html) but that's a rabbit hole I may not fall into for the purpose of this project scope.
+
+I've been getting more and more excited about this project as I've worked on it, I feel like I'm just scraping the surface. 
 
 
 
